@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="ISO-8859-1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My Profile</title>
+        <!-- Include common CSS/JS files (replace with actual links) -->
+        <link rel="stylesheet" href="profile.component.css">
+        <script src="scripts.js"></script>
+        <style>
+        .cus-active {
+            background-color: #e6eefa !important;
+            width: 100%;
+        }
+
+        .list-btn {
+            font-size: 20px !important;
+        }
+
+        .list-btn:hover {
+            color: #2874f0 !important;
+        }
+    </style>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <nav>
+            <!-- Navbar content here -->
+        </nav>
+
+        <div class="container-fluid px-3 py-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Profile Card -->
+                    <div class="card">
+                        <div class="row mt-2 mb-2">
+                            <div class="col-md-4">
+                                <div class="container text-center">
+                                    <img src="/img/profile.png"
+                                        style="max-width: 60px;"
+                                        class="img-fluid" alt="Profile Image">
+                                </div>
+                            </div>
+                            <div class="col-md-8">
+                                Hello, <br>
+                                <h5 id="user-name">User Name</h5>
+                                <!-- Replace with dynamic username -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sidebar with Navigation Buttons -->
+                    <div class="card mt-3">
+                        <div class="list-group">
+                            <button type="button" id="profile-btn"
+                                class="list-group-item list-group-item-action cus-active list-btn"
+                                aria-current="true">
+                                Profile Information
+                            </button>
+                            <button type="button" id="wishlist-btn"
+                                class="list-group-item list-group-item-action list-btn">
+                                My Wishlist
+                            </button>
+                            <button type="button" id="order-btn"
+                                class="list-group-item list-group-item-action list-btn">
+                                My Orders
+                            </button>
+                            <button type="button" id="logout-btn"
+                                class="list-group-item list-group-item-action list-btn"
+                                onclick="window.open('LogoutServlet?user=user', '_self')">
+                                Logout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Content Area -->
+                <div class="col-md-9">
+                    <div class="card">
+                        <div id="profile">
+                            <!-- Alert message include -->
+                            <div id="alert-message"></div>
+                            <!-- Placeholder for alert message -->
+                            <div id="personal-info">
+                                <!-- Include personal information here -->
+                            </div>
+                        </div>
+                        <div id="wishlist" style="display: none;">
+                            <!-- Include wishlist content here -->
+                        </div>
+                        <div id="order" style="display: none;">
+                            <!-- Include orders content here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JavaScript for Tab Switching -->
+        <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById('profile-btn').addEventListener('click', function () {
+                document.getElementById('profile').style.display = 'block';
+                document.getElementById('wishlist').style.display = 'none';
+                document.getElementById('order').style.display = 'none';
+
+                this.classList.add('cus-active');
+                document.getElementById('wishlist-btn').classList.remove('cus-active');
+                document.getElementById('order-btn').classList.remove('cus-active');
+            });
+
+            document.getElementById('wishlist-btn').addEventListener('click', function () {
+                document.getElementById('wishlist').style.display = 'block';
+                document.getElementById('profile').style.display = 'none';
+                document.getElementById('order').style.display = 'none';
+
+                this.classList.add('cus-active');
+                document.getElementById('profile-btn').classList.remove('cus-active');
+                document.getElementById('order-btn').classList.remove('cus-active');
+            });
+
+            document.getElementById('order-btn').addEventListener('click', function () {
+                document.getElementById('order').style.display = 'block';
+                document.getElementById('profile').style.display = 'none';
+                document.getElementById('wishlist').style.display = 'none';
+
+                this.classList.add('cus-active');
+                document.getElementById('profile-btn').classList.remove('cus-active');
+                document.getElementById('wishlist-btn').classList.remove('cus-active');
+            });
+        });
+    </script>
+    </body>
+
+</html>

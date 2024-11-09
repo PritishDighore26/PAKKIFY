@@ -1,0 +1,119 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container-fluid {
+    padding: 20px;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: #4CAF50;
+    padding: 10px;
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+/* Profile Card */
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.card .row {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.card img {
+    max-width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.card h5 {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Sidebar Navigation */
+.list-group-item {
+    font-size: 1rem;
+    padding: 12px 20px;
+    text-align: left;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.list-group-item:hover {
+    background-color: #f0f0f0;
+    color: #2874f0;
+    cursor: pointer;
+}
+
+.cus-active {
+    background-color: #e6eefa !important;
+    color: #2874f0 !important;
+    font-weight: bold;
+}
+
+/* Button Styling */
+.list-btn {
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.list-btn:hover {
+    color: #2874f0 !important;
+}
+
+/* Tab Content Styling */
+#profile,
+#wishlist,
+#order {
+    padding: 20px;
+    display: none;
+}
+
+/* Display Tab Content */
+#profile.active,
+#wishlist.active,
+#order.active {
+    display: block;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .container-fluid {
+        padding: 15px;
+    }
+
+    .col-md-3,
+    .col-md-9 {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .card {
+        margin-bottom: 10px;
+    }
+
+    .list-group-item {
+        font-size: 1rem;
+    }
+}
